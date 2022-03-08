@@ -30,3 +30,8 @@ jobs:
 
       - name: Run linters
         uses: TQRG/puppet-lint-security-iac@v2.0.0
+        run: bundle install
+        run: bundle exec rake
+        run: gem build puppet_lint_security_iac.gemspec
+        run: gem install ./puppet-lint-security-iac-1.0.0.gem
+        run: puppet-lint ./*.pp
