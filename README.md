@@ -4,7 +4,7 @@
 
 This is intended to be a re-usable
 [Puppet](http://www.puppetlabs.com/puppet/introduction/) module that you can
-include in your own tree. oui
+include in your own tree.
 
 # Experimental Types and Providers
 
