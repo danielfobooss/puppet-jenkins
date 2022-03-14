@@ -1,4 +1,4 @@
-name: Puppet Lint
+name: Puppet Lint IaC
 
 on: [push]
 
