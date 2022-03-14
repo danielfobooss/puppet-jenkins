@@ -12,6 +12,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: puppet-lint
-      uses: rodjek/puppet-lint@master
+      uses: scottbrenner/puppet-lint-action@master
       with:
-        args: ./.*pp
+        args: ./examples/*.pp
