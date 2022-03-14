@@ -11,7 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: puppet-lint
-      uses: scottbrenner/puppet-lint-action@master
+    - name: puppet-lint-iac
+      uses: TQRG/puppet-lint-security-iac@v2.0.0
       with:
         args: ./examples/*.pp
