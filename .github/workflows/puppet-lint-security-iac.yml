@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   lint:
-    name: RuboCop
+    name: puppet-lint-iac
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,16 +12,12 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
+      - run: bundle install
       - run: bundle exec rake
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  puppet-lint-iac:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: puppet-lint-iac
-      uses: TQRG/puppet-lint-security-iac@v2.0.0
-      with:
-        args: ./examples/*.pp
+      - name: puppet-lint-iac
+        uses: TQRG/puppet-lint-security-iac@v2.0.0
+        with:
+          args: ./examples/*.pp
