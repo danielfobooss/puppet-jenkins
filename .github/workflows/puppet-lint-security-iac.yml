@@ -3,8 +3,18 @@ name: Puppet Lint IaC
 on: [push]
 
 jobs:
-  puppet-lint:
+  lint:
+    name: RuboCop
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - run: bundle exec rake
 
+  puppet-lint-iac:
     runs-on: ubuntu-latest
 
     steps:
