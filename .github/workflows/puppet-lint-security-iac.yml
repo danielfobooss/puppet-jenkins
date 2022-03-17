@@ -5,19 +5,4 @@ on: [push]
 jobs:
   lint:
     name: puppet-lint-iac
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-          bundler-cache: true
-      - run: bundle install
-      - run: bundle exec rake
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-
-      - name: puppet-lint-iac
-        uses: TQRG/puppet-lint-security-iac/.github/workflows/ci.yml@v2.0.0
-        with:
-          args: ./examples/*.pp
+    uses: TQRG/puppet-lint-security-iac/.github/workflows/ci.yml@v2.0.0
