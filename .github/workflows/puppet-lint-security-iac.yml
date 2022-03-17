@@ -6,3 +6,4 @@ jobs:
   lint:
     name: puppet-lint-iac
     uses: TQRG/puppet-lint-security-iac/.github/workflows/ci.yml@v2.0.0
+    working-directory: ./examples/
