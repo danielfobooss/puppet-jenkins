@@ -15,9 +15,9 @@ jobs:
       - run: bundle install
       - run: bundle exec rake
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.0.0
 
       - name: puppet-lint-iac
-        uses: TQRG/puppet-lint-security-iac@v2.0.0
+        uses: TQRG/puppet-lint-security-iac/.github/workflows/ci.yml@v2.0.0
         with:
           args: ./examples/*.pp
